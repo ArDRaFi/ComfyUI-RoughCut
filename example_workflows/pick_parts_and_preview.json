@@ -1,0 +1,147 @@
+{
+ "id": "032ffff0-56ba-48b3-af8c-c5eba3022870",
+ "revision": 0,
+ "last_node_id": 2,
+ "last_link_id": 1,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "RC_LoadVideo",
+   "pos": [
+    40,
+    80
+   ],
+   "size": [
+    440,
+    482
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "file",
+     "name": "file",
+     "type": "COMBO",
+     "widget": {
+      "name": "file"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "parts",
+     "name": "parts",
+     "shape": 7,
+     "type": "STRING",
+     "widget": {
+      "name": "parts"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": [
+      1
+     ]
+    },
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    },
+    {
+     "localized_name": "audio",
+     "name": "audio",
+     "type": "AUDIO",
+     "links": null
+    },
+    {
+     "localized_name": "fps",
+     "name": "fps",
+     "type": "FLOAT",
+     "links": null
+    },
+    {
+     "localized_name": "frames",
+     "name": "frames",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RC_LoadVideo"
+   },
+   "widgets_values": [
+    "your_video.mp4",
+    "[{\"start\":1,\"end\":3},{\"start\":6,\"end\":8}]",
+    ""
+   ],
+   "widgets_values_named": {
+    "file": "your_video.mp4",
+    "parts": "[{\"start\":1,\"end\":3},{\"start\":6,\"end\":8}]",
+    "rc_timeline": ""
+   }
+  },
+  {
+   "id": 2,
+   "type": "RC_PreviewVideo",
+   "pos": [
+    560,
+    80
+   ],
+   "size": [
+    157.683203125,
+    26
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RC_PreviewVideo"
+   }
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.9,
+   "offset": [
+    416,
+    110
+   ]
+  }
+ },
+ "version": 0.4
+}

@@ -1,0 +1,104 @@
+.rc-root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 2px 4px;
+  font: 12px sans-serif;
+  color: var(--input-text, #ddd);
+  user-select: none;
+}
+.rc-video {
+  flex: 1 1 auto;
+  min-height: 80px;
+  width: 100%;
+  background: #000;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.rc-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+.rc-time {
+  flex: 1 1 auto;
+  font-variant-numeric: tabular-nums;
+}
+.rc-root button {
+  background: var(--comfy-input-bg, #333);
+  color: var(--input-text, #ddd);
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.rc-root button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.rc-root input {
+  width: 72px;
+  background: var(--comfy-input-bg, #333);
+  color: var(--input-text, #ddd);
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.rc-track {
+  position: relative;
+  flex: 0 0 auto;
+  height: 30px;
+  background: #1c1c1c;
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  touch-action: none;
+}
+.rc-part {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(70, 140, 255, 0.45);
+  cursor: grab;
+}
+.rc-part.rc-selected {
+  background: rgba(70, 140, 255, 0.8);
+}
+.rc-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 7px;
+  background: #cfe0ff;
+  cursor: ew-resize;
+}
+.rc-handle-start {
+  left: 0;
+}
+.rc-handle-end {
+  right: 0;
+}
+.rc-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  pointer-events: none;
+}
+.rc-summary {
+  flex: 0 0 auto;
+  opacity: 0.8;
+}
+.rc-summary.rc-error {
+  color: #ff8a80;
+  opacity: 1;
+}

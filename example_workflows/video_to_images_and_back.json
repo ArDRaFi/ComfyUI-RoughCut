@@ -1,0 +1,386 @@
+{
+ "id": "0d11b98e-a380-4e76-84c4-cb8a036df09d",
+ "revision": 0,
+ "last_node_id": 4,
+ "last_link_id": 3,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "RC_LoadVideo",
+   "pos": [
+    40,
+    80
+   ],
+   "size": [
+    440,
+    482
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "file",
+     "name": "file",
+     "type": "COMBO",
+     "widget": {
+      "name": "file"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "parts",
+     "name": "parts",
+     "shape": 7,
+     "type": "STRING",
+     "widget": {
+      "name": "parts"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": [
+      1
+     ]
+    },
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": null
+    },
+    {
+     "localized_name": "audio",
+     "name": "audio",
+     "type": "AUDIO",
+     "links": null
+    },
+    {
+     "localized_name": "fps",
+     "name": "fps",
+     "type": "FLOAT",
+     "links": null
+    },
+    {
+     "localized_name": "frames",
+     "name": "frames",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RC_LoadVideo"
+   },
+   "widgets_values": [
+    "your_video.mp4",
+    "",
+    ""
+   ],
+   "widgets_values_named": {
+    "file": "your_video.mp4",
+    "parts": "",
+    "rc_timeline": ""
+   }
+  },
+  {
+   "id": 2,
+   "type": "RC_VideoToImages",
+   "pos": [
+    560,
+    80
+   ],
+   "size": [
+    270,
+    194
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 1
+    },
+    {
+     "localized_name": "start",
+     "name": "start",
+     "type": "FLOAT",
+     "widget": {
+      "name": "start"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "end",
+     "name": "end",
+     "type": "FLOAT",
+     "widget": {
+      "name": "end"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "every_nth",
+     "name": "every_nth",
+     "type": "INT",
+     "widget": {
+      "name": "every_nth"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "max_frames",
+     "name": "max_frames",
+     "type": "INT",
+     "widget": {
+      "name": "max_frames"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "longest_side",
+     "name": "longest_side",
+     "type": "INT",
+     "widget": {
+      "name": "longest_side"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "links": [
+      2
+     ]
+    },
+    {
+     "localized_name": "fps",
+     "name": "fps",
+     "type": "FLOAT",
+     "links": null
+    },
+    {
+     "localized_name": "frames",
+     "name": "frames",
+     "type": "INT",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RC_VideoToImages"
+   },
+   "widgets_values": [
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   "widgets_values_named": {
+    "start": 0,
+    "end": 0,
+    "every_nth": 2,
+    "max_frames": 0,
+    "longest_side": 0
+   }
+  },
+  {
+   "id": 3,
+   "type": "RC_ImagesToVideo",
+   "pos": [
+    960,
+    80
+   ],
+   "size": [
+    270,
+    102
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "images",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 2
+    },
+    {
+     "localized_name": "audio",
+     "name": "audio",
+     "shape": 7,
+     "type": "AUDIO",
+     "link": null
+    },
+    {
+     "localized_name": "fps",
+     "name": "timing.fps",
+     "type": "FLOAT",
+     "widget": {
+      "name": "timing.fps"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "timing",
+     "name": "timing",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "timing"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": [
+      3
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "RC_ImagesToVideo"
+   },
+   "widgets_values": [
+    "frame rate",
+    12
+   ],
+   "widgets_values_named": {
+    "timing": "frame rate",
+    "timing.fps": 12
+   }
+  },
+  {
+   "id": 4,
+   "type": "SaveVideo",
+   "pos": [
+    1400,
+    80
+   ],
+   "size": [
+    270,
+    106
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 3
+    },
+    {
+     "localized_name": "filename_prefix",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "codec",
+     "name": "format.codec",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "format",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "localized_name": "codec",
+     "name": "codec",
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": null
+    }
+   ],
+   "properties": {},
+   "widgets_values": [
+    "video/ComfyUI",
+    "auto",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "video/ComfyUI",
+    "format": "auto",
+    "format.codec": "auto",
+    "codec": "auto"
+   }
+  }
+ ],
+ "links": [
+  [
+   1,
+   1,
+   0,
+   2,
+   0,
+   "VIDEO"
+  ],
+  [
+   2,
+   2,
+   0,
+   3,
+   0,
+   "IMAGE"
+  ],
+  [
+   3,
+   3,
+   0,
+   4,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.9,
+   "offset": [
+    416,
+    110
+   ]
+  }
+ },
+ "version": 0.4
+}

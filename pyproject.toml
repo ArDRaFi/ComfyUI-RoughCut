@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-roughcut"
+description = "Small nodes for rough video editing in ComfyUI: pick parts of a video on a timeline, cut, join, change speed, swap audio, and convert between video and images."
+version = "0.1.0"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/ArDRaFi/ComfyUI-RoughCut"
+
+[tool.comfy]
+DisplayName = "RoughCut"
+requires-comfyui = ">=0.44.0"
